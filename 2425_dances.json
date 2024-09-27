@@ -1,0 +1,96 @@
+{
+    "Solo Dance": {
+        "National": {
+            "Young Stars Beginner": [
+                "Novice Foxtrot",
+                "Rhythm Blues"
+            ],
+            "Young Stars Juvenile": [
+                "Golden Skater's Waltz",
+                "Riverside Rhumba"
+            ],
+            "Basic Novice": [
+                "Tango Fiesta",
+                "Rhythm Blues"
+            ],
+            "Intermediate Novice": [
+                "American Waltz",
+                "Kilian"
+            ],
+            "Advanced Novice": [
+                "Westminster Waltz",
+                "Tango"
+            ]
+        },
+        "Adults": {
+            "Pre-Bronze": [
+                "Novice Foxtrot",
+                "Rhythm Blues"
+            ],
+            "Bronze": [
+                "Golden Skater's Waltz",
+                "Riverside Rhumba"
+            ],
+            "Silver": [
+                "Tango Fiesta",
+                "Rhythm Blues"
+            ],
+            "Gold": [
+                "American Waltz",
+                "Kilian"
+            ],
+            "Masters": [
+                "Westminster Waltz",
+                "Tango"
+            ]
+        }
+    },
+    "Couples Dance": {
+        "National": {
+            "Couples Beginner": [
+                "Novice Foxtrot",
+                "Rhythm Blues"
+            ],
+            "Couples Juvenile": [
+                "Golden Skater's Waltz",
+                "Riverside Rhumba"
+            ],
+            "Couples Basic Novice": [
+                "Swing Dance",
+                "Tango Fiesta",
+                "Rhythm Blues"
+            ],
+            "Couples Intermediate Novice": [
+                "Foxtrot",
+                "American Waltz",
+                "Kilian"
+            ],
+            "Couples Advanced Novice": [
+                "Westminster Waltz",
+                "Tango"
+            ]
+        },
+        "Adults": {
+            "Adult Couples Pre-Bronze": [
+                "Golden Skater's Waltz",
+                "Riverside Rhumba"
+            ],
+            "Adult Couples Bronze": [
+                "Fourteenstep",
+                "Swing Dance"
+            ],
+            "Adult Couples Silver": [
+                "Rocker Foxtrot",
+                "Blues"
+            ],
+            "Adult Couples Gold": [
+                "Starlight Waltz",
+                "Kilian"
+            ],
+            "Adult Couples Masters": [
+                "Starlight Waltz",
+                "Quickstep"
+            ]
+        }
+    }
+}

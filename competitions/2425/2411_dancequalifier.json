@@ -1,0 +1,34 @@
+{
+    "Solo Dance": {
+        "National": {
+            "Young Stars Beginner": 1,
+            "Young Stars Juvenile": 1,
+            "Basic Novice": 1,
+            "Intermediate Novice": 1,
+            "Advanced Novice": 1
+        },
+        "Adults": {
+            "Pre-Bronze": 1,
+            "Bronze": 1,
+            "Silver": 1,
+            "Gold": 1,
+            "Masters": 1
+        }
+    },
+    "Couples Dance": {
+        "National": {
+            "Couples Beginner": 0,
+            "Couples Juvenile": 0,
+            "Couples Basic Novice": 2,
+            "Couples Intermediate Novice": 2,
+            "Couples Advanced Novice": 2
+        },
+        "Adults": {
+            "Adult Couples Pre-Bronze": 2,
+            "Adult Couples Bronze": 2,
+            "Adult Couples Silver": 2,
+            "Adult Couples Gold": 2,
+            "Adult Couples Masters": 2
+        }
+    }
+}
