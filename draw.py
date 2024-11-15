@@ -51,7 +51,7 @@ def main():
             for category_name, dances in category.items():
                 no_of_dances = competition.get(cat_type).get(supercategory_name).get(category_name)
                 if no_of_dances != 0:
-                    drawn_dances = [f'- {dance_name}' for dance_name in generator.choice(dances, no_of_dances, replace=False)]
+                    drawn_dances = [f'1. {dance_name}' for dance_name in generator.choice(dances, no_of_dances, replace=False)]
                     drawn_dance_list = '\n'.join(drawn_dances)
                     master_string.append(f'#### {category_name}\n{drawn_dance_list}\n')
 
