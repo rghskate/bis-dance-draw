@@ -1,5 +1,5 @@
 from importlib.metadata import version
-from numpy import random, __version__ as npver
+from numpy import random
 from datetime import datetime
 from markdown_pdf import MarkdownPdf, Section
 import json
@@ -29,11 +29,13 @@ def main():
     now_string = now.strftime("%d/%m/%Y - %H:%M:%S")
 
     if forced_seed is None:
-        seed = int(now.strftime("%d%m%Y%H%M%S"))
+        seed_randomiser = random.default_rng()
+        random_int = seed_randomiser.integers(0,100)
+        seed = (int(now.strftime("%d%m%Y%H%M%S"))/20)*random_int
     else:
         seed = forced_seed
 
-    generator = random.default_rng(seed=seed)
+    generator = random.Generator(random.PCG64(seed=seed))
 
     with open(current_dances_filepath, 'r') as f:
         all_dances:dict = json.load(f)
@@ -77,7 +79,7 @@ This program was run in the following environment:
 - Python System platform: `{sys.platform}`
 - Python OS Name: `{os.name}`
 - Draw time: `{now}`
-- Randomiser: `np.random.default_rng()`
+- Randomiser: `np.random.PCG64`
 - Randomiser seed: `{seed}`
 
 The code for this program can be found at [github.com/rghs/bis-dance-draw](https://github.com/rghs/bis-dance-draw)
