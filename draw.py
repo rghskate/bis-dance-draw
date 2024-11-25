@@ -7,6 +7,37 @@ import argparse
 import os
 import sys
 
+def recursive_sum(node:dict|int):
+    if isinstance(node, int):
+        return node
+    elif isinstance(node, dict):
+        return sum(recursive_sum(child) for child in node.values())
+    return 0
+
+def sum_child_values(data:dict, level=None):
+    """
+    Recursively computes the sum of all integer values starting at a given level in a nested dictionary.
+    
+    Args:
+        data (dict): The nested dictionary.
+        level (str): The key at which to start the sum. If None, starts at the root of the dictionary.
+
+    Returns:
+        int: The sum of all integer values in the child nodes.
+    """
+    if level is None:
+        return recursive_sum(data)
+    
+    if level in data:
+        return recursive_sum(data[level])
+    else:
+        for value in data.values():
+            if isinstance(value, dict):
+                result = sum_child_values(value, level)
+                if result is not None:
+                    return result
+    return None
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('DANCES',help='JSON file containing all dances for current season. See repo for examples.')
@@ -26,7 +57,6 @@ def main():
         forced_seed = None
 
     now = datetime.now()
-    now_string = now.strftime("%d/%m/%Y - %H:%M:%S")
 
     if forced_seed is None:
         seed_randomiser = random.default_rng()
@@ -34,6 +64,7 @@ def main():
         seed = (int(now.strftime("%d%m%Y%H%M%S"))/20)*random_int
     else:
         seed = forced_seed
+    seed=int(seed)
 
     generator = random.Generator(random.PCG64(seed=seed))
 
@@ -43,18 +74,22 @@ def main():
         competition:dict = json.load(f)
 
     master_string = []
+    loop_string = []
 
-    for cat_type, supercategory in all_dances.items():
-        master_string.append(f'## {cat_type}\n\n')
-        for supercategory_name, category in supercategory.items():
-            master_string.append(f'### {supercategory_name}\n\n')
-            for category_name, dances in category.items():
-                no_of_dances = competition.get(cat_type).get(supercategory_name).get(category_name)
-                if no_of_dances != 0:
-                    drawn_dances = [f'1. {dance_name}' for dance_name in generator.choice(dances, no_of_dances, replace=False)]
-                    drawn_dance_list = '\n'.join(drawn_dances)
-                    master_string.append(f'#### {category_name}\n{drawn_dance_list}\n')
-
+    for cat_type, supercategory in competition.items():
+        if sum_child_values(supercategory) != 0:
+            loop_string.append(f'## {cat_type}\n\n')
+            for supercategory_name, category in supercategory.items():
+                if sum_child_values(category) != 0:
+                    loop_string.append(f'### {supercategory_name}\n\n')
+                    for category_name, no_of_dances in category.items():
+                            if no_of_dances != 0:
+                                available_dances = all_dances.get(cat_type).get(supercategory_name).get(category_name)
+                                drawn_dances = [f'1. {dance_name}' for dance_name in generator.choice(available_dances, no_of_dances, replace=False)]
+                                drawn_dance_list = '\n'.join(drawn_dances)
+                                loop_string.append(f'#### {category_name}\n{drawn_dance_list}\n')
+            master_string.extend(loop_string)
+        
     css = '''@font-face {
     font-family: Barlow;
     src: url('Barlow/Barlow-Regular.ttf');
