@@ -1,0 +1,96 @@
+{
+    "Solo Dance": {
+        "National": {
+            "Beginner": [
+                "Novice Foxtrot",
+                "Rhythm Blues"
+            ],
+            "Juvenile": [
+                "Golden Skater's Waltz",
+                "Tango Fiesta"
+            ],
+            "Basic Novice": [
+                "Willow Waltz",
+                "Tango Canasta"
+            ],
+            "Intermediate Novice": [
+                "European Waltz",
+                "Tango"
+            ],
+            "Advanced Novice": [
+                "Starlight Waltz",
+                "Quickstep"
+            ]
+        },
+        "Adults": {
+            "Pre-Bronze": [
+                "Novice Foxtrot",
+                "Rhythm Blues"
+            ],
+            "Bronze": [
+                "Willow Waltz",
+                "Tango Canasta"
+            ],
+            "Silver": [
+                "European Waltz",
+                "Tango"
+            ],
+            "Gold": [
+                "Starlight Waltz",
+                "Quickstep"
+            ],
+            "Masters": [
+                "Starlight Waltz",
+                "Quickstep"
+            ]
+        }
+    },
+    "Couples Dance": {
+        "National": {
+            "Beginner": [
+                "Novice Foxtrot",
+                "Rhythm Blues"
+            ],
+            "Juvenile": [
+                "Riverside Rhumba",
+                "Tango Fiesta"
+            ],
+            "Basic Novice": [
+                "Willow Waltz",
+                "Tango Canasta",
+                "Rhythm Blues"
+            ],
+            "Intermediate Novice": [
+                "Rocker Foxtrot",
+                "European Waltz",
+                "Tango"
+            ],
+            "Advanced Novice": [
+                "Starlight Waltz",
+                "Quickstep"
+            ]
+        },
+        "Adults": {
+            "Pre-Bronze": [
+                "Golden Skater's Waltz",
+                "Riverside Rhumba"
+            ],
+            "Bronze": [
+                "Willow Waltz",
+                "Tango Fiesta"
+            ],
+            "Silver": [
+                "American Waltz",
+                "Tango"
+            ],
+            "Gold": [
+                "Westminster Waltz",
+                "Silver Samba"
+            ],
+            "Masters": [
+                "Ravensburger Waltz",
+                "Cha Cha Congelado"
+            ]
+        }
+    }
+}
