@@ -6,6 +6,7 @@ import json
 import argparse
 import os
 import sys
+import hashlib
 
 
 def calculate_totals(desired_dances: dict):
@@ -161,6 +162,14 @@ def main():
     with open("style.css", "r") as f:
         css = f.read()
 
+    with open("draw.py", "r") as f:
+        self_hash_string = f.read()
+
+    if forced_seed is None:
+        seed_state = "Random"
+    else:
+        seed_state = "Forced"
+
     technical_information = f"""# Technical Details
 
 This draw was performed using draw.py, a Python program based on the following modules:
@@ -177,6 +186,8 @@ This program was run in the following environment:
 - Draw time: `{now}`
 - Randomiser: `np.random.PCG64`
 - Randomiser seed: `{seed}`
+- Seed state (random/forced): `{seed_state}`
+- Program hash: `{hashlib.sha256(self_hash_string.encode("utf-8")).hexdigest()}`
 
 The code for this program can be found at [github.com/rghskate/bis-dance-draw](https://github.com/rghskate/bis-dance-draw)
     """
