@@ -22,7 +22,7 @@ This command will recreate the `Example competition.pdf` in the current director
 
 ### Program hash
 
-The program calculates a SHA256 hash of the bytes of `draw.py` when it is run. The current version of the program, when unmodified, should produce the following checksum: `9c234a708d021b5595da0d6929d37d4d9500a2737f83ddd711a076ab7c9e64d7`.
+The program calculates a SHA256 hash of the bytes of `draw.py` when it is run. The current version of the program, when unmodified, should produce the following checksum: `2c8b529d307a5006865534896c72335931873c1fde618866e2a4324844d021f4`.
 
 ## Example input documents
 ### Pattern Dance list

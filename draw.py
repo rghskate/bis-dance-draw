@@ -127,16 +127,9 @@ def main():
 
             else:
                 keys_to_pop.append([l1k, l2k])
-        if dance_choices[l1k] == {}:
-            keys_to_pop.append(l1k)
 
     for entry in keys_to_pop:
-        if len(entry) == 1:
-            try:
-                dance_choices.pop(entry[0])
-            except KeyError:
-                pass
-        elif len(entry) == 2:
+        if len(entry) == 2:
             try:
                 dance_choices[entry[0]].pop(entry[1])
             except KeyError:
@@ -146,6 +139,13 @@ def main():
                 dance_choices[entry[0]][entry[1]].pop(entry[2])
             except KeyError:
                 pass
+
+    disciplines_to_pop = []
+    for key, value in dance_choices.items():
+        if value == {}:
+            disciplines_to_pop.append(key)
+    for entry in disciplines_to_pop:
+        dance_choices.pop(entry)
 
     master_string = []
     for discipline, age in dance_choices.items():
