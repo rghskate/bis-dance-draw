@@ -2,6 +2,16 @@
 
 A simple program to perform electronic draws for pattern dances at Ice Dance and Solo Dance events.
 
+## Installation
+
+Currently, no installer is provided for this program. The simplest way to install the program is to clone the repo and install the dependencies using the `uv` package manager. The below commands on a system with git and uv installed will get you up and running:
+
+```bash
+git clone https://github.com/rghskate/bis-dance-draw/
+cd bis-dance-draw
+uv run draw.py --help
+```
+
 ## Using the program
 
 The program requires two inputs formatted as `JSON` files: these files are a list of pattern dances for each discipline for the season, and a list for each competition of how many dances in each discipline and level are required. Examples of both are included later in the README.
@@ -19,10 +29,6 @@ python draw.py dance_lists/2526_dances.json competitions/2526/2509idqual_idadult
 ```
 
 This command will recreate the `Example competition.pdf` in the current directory.
-
-### Program hash
-
-The program calculates a SHA256 hash of the bytes of `draw.py` when it is run. The current version of the program, when unmodified, should produce the following checksum: `2c8b529d307a5006865534896c72335931873c1fde618866e2a4324844d021f4`.
 
 ## Example input documents
 ### Pattern Dance list
@@ -168,3 +174,7 @@ The program calculates a SHA256 hash of the bytes of `draw.py` when it is run. T
 ### Example
 
 The included example file (`Example competition.pdf`), produced with the command seen earlier in the README (without the `--force-seed` flag), uses the JSON documents shown above.
+
+## Program hash
+
+The program calculates a SHA256 hash of the bytes of `draw.py` when it is run. The current version of the program, when unmodified, should produce the following checksum: `2c8b529d307a5006865534896c72335931873c1fde618866e2a4324844d021f4`.
